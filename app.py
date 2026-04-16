@@ -1,13 +1,31 @@
 import streamlit as st
 from streamlit_drawable_canvas import st_canvas
 
-st.title("Tablero para dibujo")
-st.write("En este tablero puedes dejar volar tu imaginación sin límites. Cada trazo, forma y color es una oportunidad para expresar tus ideas, crear lo que quieras y darle vida a tu creatividad.")
+# Fuente divertida desde Google Fonts
+st.markdown("""
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+""", unsafe_allow_html=True)
+
+# Título centrado con tipografía estilo niños
+st.markdown("""
+<h1 style='text-align: center; font-family: "Comic Neue", cursive; color: #FF6F61;'>
+🎨 Tablero para dibujo
+</h1>
+""", unsafe_allow_html=True)
+
+# Texto centrado
+st.markdown("""
+<p style='text-align: center; font-size:18px;'>
+En este tablero puedes dejar volar tu imaginación sin límites. 
+Cada trazo, forma y color es una oportunidad para expresar tus ideas, 
+crear lo que quieras y darle vida a tu creatividad.
+</p>
+""", unsafe_allow_html=True)
 
 with st.sidebar:
     st.subheader("Propiedades del Tablero")
 
-    # Canvas dimensions (moved to the top)
+    # Canvas dimensions
     st.subheader("Dimensiones del Tablero")
     canvas_width = st.slider("Ancho del tablero", 300, 700, 500, 50)
     canvas_height = st.slider("Alto del tablero", 200, 600, 300, 50)
@@ -27,7 +45,7 @@ with st.sidebar:
     # Background color
     bg_color = st.color_picker("Color de fondo", "#000000")
 
-# Create a canvas component with dynamic key
+# Canvas
 canvas_result = st_canvas(
     fill_color="rgba(255, 165, 0, 0.3)",
     stroke_width=stroke_width,
