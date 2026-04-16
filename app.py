@@ -2,6 +2,7 @@ import streamlit as st
 from streamlit_drawable_canvas import st_canvas
 
 st.title("Tablero para dibujo")
+st.write("En este tablero puedes dejar volar tu imaginación sin límites. Cada trazo, forma y color es una oportunidad para expresar tus ideas, crear lo que quieras y darle vida a tu creatividad.")
 
 with st.sidebar:
     st.subheader("Propiedades del Tablero")
@@ -35,5 +36,5 @@ canvas_result = st_canvas(
     height=canvas_height,
     width=canvas_width,
     drawing_mode=drawing_mode,
-    key=f"canvas_{canvas_width}_{canvas_height}",  # Dynamic key based on dimensions
+    key=f"canvas_{canvas_width}_{canvas_height}",
 )
